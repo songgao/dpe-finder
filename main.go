@@ -41,4 +41,10 @@ func main() {
 		fmt.Printf("Designee Function Codes: %s\n", designee.FunctionCodes)
 		fmt.Println()
 	}
+
+	fmt.Printf("=== DPEs Emails ranked by distance to %s ===\n\n", originZipCode)
+	for _, item := range ranked {
+		designee := d.designees[item.designeeID]
+		fmt.Printf("%s <%s>\n", designee.FullName, designee.Email)
+	}
 }
